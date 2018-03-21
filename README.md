@@ -1,2 +1,2 @@
 # final
-The Finalising bugged project of MNNIT PassOn Website
+The final bugged project of MNNIT PassOn Website
