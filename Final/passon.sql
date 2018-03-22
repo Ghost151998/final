@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2018 at 09:21 AM
+-- Generation Time: Mar 21, 2018 at 10:47 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -50,7 +50,7 @@ INSERT INTO `admins` (`admin_code`, `admin_password`, `admin_name`) VALUES
 CREATE TABLE `bikes` (
   `id` int(11) NOT NULL,
   `seller` varchar(8) NOT NULL,
-  `gear` text NOT NULL,
+  `gear` tinyint(1) NOT NULL DEFAULT '0',
   `brand` text NOT NULL,
   `colour` text,
   `quality` set('new','good','ok','poor') NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE `bikes` (
 --
 
 INSERT INTO `bikes` (`id`, `seller`, `gear`, `brand`, `colour`, `quality`, `description`, `price`, `is_sold`) VALUES
-(1, '20168059', '21', 'Atlas Nixer', 'Red', 'good', 'Highly maintained...you won\'t need to do much.', '2000', 0);
+(1, '20168059', 1, 'Atlas Nixer', 'Red', 'good', 'Highly maintained...you won\'t need to do much.', '2000', 0);
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ CREATE TABLE `books` (
   `edition` text,
   `seller` varchar(8) NOT NULL,
   `branch` set('cseit','mechprod','chem','biot','civ','ece','ee') DEFAULT NULL,
-  `sem` set('1','2','3','4','5','6','7','8') DEFAULT NULL,
+  `sem` set('1','3','4','5','6','7','8') DEFAULT NULL,
   `description` text NOT NULL,
   `quality` set('new','good','ok','poor') NOT NULL,
   `price` varchar(10) NOT NULL,
@@ -92,9 +92,11 @@ CREATE TABLE `books` (
 
 INSERT INTO `books` (`id`, `author`, `title`, `edition`, `seller`, `branch`, `sem`, `description`, `quality`, `price`, `is_sold`) VALUES
 (1, 'RD Sharma', 'Maths', '4th Edition', '20168059', 'mechprod', '3', 'A bit old.Good condition.No pencil marks.', 'ok', '200', 0),
-(2, 'IE Irodov', 'Physics', '3', 'Chutia', 'ece', '2', 'FUCKING NEW BIATCH!', 'new', '114', 1),
+(2, 'IE Irodov', 'Physics', '3', 'Chutia', 'ece', '3', 'FUCKING NEW BIATCH!', 'new', '114', 1),
 (3, 'Paulo Coelho', 'The Alchemist', '4', '20168059', NULL, NULL, 'Great Novel', 'new', '350', 1),
-(9, 'SL Loney', 'Trigonometry', '4', '20168059', 'chem', '5', '1234', 'poor', '450', 0);
+(9, 'SL Loney', 'Trigonometry', '4', '20168059', 'chem', '5', '1234', 'poor', '450', 0),
+(10, 'Dennis Ritchie', 'Let Us C', '2', '20168059', 'cseit', '3', 'MADARCHUDAI', 'new', '4000', 1),
+(12, 'Kayden Kross', 'Google Me', '3', '20168059', 'ece', '3', 'Fuck Arshad', 'good', '455', 0);
 
 -- --------------------------------------------------------
 
@@ -148,7 +150,7 @@ CREATE TABLE `salerequest` (
   `sem` set('1','2','3','4','5','6','7','8') DEFAULT NULL,
   `brand` text,
   `colour` text,
-  `gear` text,
+  `gear` tinyint(1) DEFAULT '0',
   `name` varchar(15) DEFAULT NULL,
   `description` text NOT NULL,
   `quality` set('new','good','ok','poor') NOT NULL,
@@ -162,10 +164,12 @@ CREATE TABLE `salerequest` (
 
 INSERT INTO `salerequest` (`id`, `seller`, `category`, `author`, `title`, `edition`, `branch`, `sem`, `brand`, `colour`, `gear`, `name`, `description`, `quality`, `price`, `deleted`) VALUES
 (1, '20168059', 'books', 'RD Sharma', 'Maths', '4', 'cseit', '3', NULL, NULL, NULL, NULL, 'drip', 'new', '350', 1),
-(2, '20168043', 'bikes', NULL, '', NULL, NULL, NULL, 'Lamborghini Aventador', 'Red', 'You shouldn\'t ask', NULL, 'Real Fast', 'new', '1000', 0),
+(2, '20168043', 'bikes', NULL, '', NULL, NULL, NULL, 'Lamborghini Aventador', 'Red', 0, NULL, 'Real Fast', 'new', '1000', 0),
 (5, '20168059', 'books', 'SL Loney', 'Trigonometry', '4', 'chem', '5', NULL, NULL, NULL, NULL, '1234', 'poor', '450', 1),
 (6, '20168059', 'books', 'Coremen', 'Algorithms', '4', 'cseit', '4', NULL, NULL, NULL, NULL, 'It\'s a big book.Read it to become ALGO GOD.', 'new', '1000', 0),
-(30, '20168059', 'books', 'Sunny Leone', 'How I roll', '4', 'ece', '2', NULL, NULL, NULL, NULL, 'I\'m good', 'good', '350', 0);
+(30, '20168059', 'books', 'Sunny Leone', 'How I roll', '4', 'ece', '2', NULL, NULL, NULL, NULL, 'I\'m good', 'good', '350', 0),
+(31, '20168059', 'books', 'Dennis Ritchie', 'Let Us C', '2', 'cseit', '3', NULL, NULL, NULL, NULL, 'MADARCHUDAI', 'new', '4000', 1),
+(34, '20168059', 'books', 'Kayden Kross', 'Google Me', '3', 'ece', '3', NULL, NULL, 0, NULL, 'Fuck Arshad', 'good', '455', 1);
 
 -- --------------------------------------------------------
 
@@ -189,7 +193,8 @@ INSERT INTO `sold_items` (`checkout_id`, `reg`, `item_id`, `item_category`, `is_
 (1, '20168059', 2, 'books', 0),
 (2, '20168059', 1, 'bikes', 0),
 (4, '20168059', 2, 'books', 0),
-(5, '20168059', 3, 'books', 1);
+(5, '20168059', 3, 'books', 1),
+(6, '20168059', 10, 'books', 1);
 
 -- --------------------------------------------------------
 
@@ -282,13 +287,13 @@ ALTER TABLE `bikes`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `misc`
@@ -300,13 +305,13 @@ ALTER TABLE `misc`
 -- AUTO_INCREMENT for table `salerequest`
 --
 ALTER TABLE `salerequest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `sold_items`
 --
 ALTER TABLE `sold_items`
-  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

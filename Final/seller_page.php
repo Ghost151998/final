@@ -50,8 +50,8 @@
       color: white;
    }
 
-   #reset:hover{
-    background-color:#E74C3C;
+   #home:hover{
+    background-color:sky;
     color: white;
    }
 
@@ -151,10 +151,7 @@ option{
     </style>
 </head>
 
-
-
 <body>
-
 
   <!-- Modal -->
  <div id="costumModal11" class="modal" data-easein="bounceUpIn"  tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="true"  data-backdrop="static" data-keyboard="false">
@@ -328,8 +325,9 @@ option{
            <button type="submit" name="seller_submitbtn" value="Submit for Verification" class="btn btn-default col-sm-4" style="border-radius: 30px;"><span class="glyphicon glyphicon-off"></span>Submit for Verification</button>
               
 <!-- Bug  modal gets closed on reset-->
-
-              <button type="reset" name="seller_resetbtn" value="Reset" class="btn btn-default col-sm-4 pull-right" id="reset" style="border-radius: 30px;" data-dismiss="modal" ><span class="glyphicon glyphicon-remove"></span> Reset</button>
+			<a href="user_home.php">
+              <button type="button" name="seller_homebtn" value="Home" class="btn btn-default col-sm-4 pull-right" id="home" style="border-radius: 30px;" ><span class="glyphicon glyphicon-home"></span>Home</button>
+           	</a>
           
           <p style="font-size: 20px;"></p>
           

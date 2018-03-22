@@ -24,7 +24,7 @@
 			$result = mysqli_query($conn,"SELECT reg FROM cart WHERE reg = '".$_SESSION["user_reg"]."' AND item_id = '".$_GET["item_id"]."' AND item_category = '".$_GET["category"]."'");
 
 			if(mysqli_num_rows($result) != 0){
-				echo "Item already added to cart<br>";
+				//echo "Item already added to cart<br>";
 				
 				//redirect to item_description.php and display the above line there.
 				//SUGGESTION: NOT TO REDIRECT TO THIS PAGE TO CHECK IF CART HAS THIS ITEM.INSTEAD,POP A DIALOG ON THE SAME PAGE...WILL HAVE TO CHECK HOW TO DO THAT
@@ -36,7 +36,7 @@
 				$result = mysqli_query($conn,"INSERT INTO cart (reg,item_id,item_category) VALUES ('".$_SESSION["user_reg"]."','".$_GET["item_id"]."','".$_GET["category"]."')");
 				//redirect to user_home.php while displaying success message
 				//echo "Item Added to Cart<br>";
-				header("Location: ".$redirect_to_cart);
+				//header("Location: ".$redirect_to_cart);
 			}
 		}
 	}
