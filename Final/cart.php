@@ -1,4 +1,4 @@
-<!-- User's Cart Page-->
+ <!-- User's Cart Page-->
 <!-- REMOVE ITEM TO BE ADDED FOR EACH ITEM. CHECKOUT TO BE HANDLED .Also to return to this page after removal of item. ALIGN PRICE TO RIGHT. -->
 <!-- SUGGESTION : UPDATE AFTER 30 MINS -->
 <?php
@@ -45,8 +45,9 @@ body{
       position: relative;
     }
 
-    th{
-      color: white;
+    th,td{
+      color: black;
+      font-size: 20px;
     }
 
     .btn-default {
@@ -55,16 +56,23 @@ body{
       color: black;
       margin-left: 30%;
       margin-top: 20px;
-      padding-bottom: 25px;
-
-      
+      padding-bottom: 25px;    
    }
+
+   .glyphicon-remove{
+    color: red;
+    font-size: 20px;
+   }
+   .glyphicon-remove:hover{
+    opacity: 0.6;
+   }
+
   .btn-default:hover {
      background: green;
       color: white;
    }
 
-
+   
     
     
 </style>
@@ -72,50 +80,9 @@ body{
 </head>
 
 <body>
+  <?php include("nav.php"); ?>
 
-
-<nav class="navbar  navbar-inverse" >
-    <div class="container-fluid ">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand col-sm-1" href="#">Logo</a>
-
-
-      <div class="navbar-collapse  collapse ">
-        <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle js-activated">Books<b class="caret"></b></a>
-            <ul class="dropdown-menu" style="background-color: black;opacity: 0.9;border: solid 1px;" >
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=cseit' style="color: white;">CSE/IT</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=ece' style="color: white;">ECE</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=ee' style="color: white;">ELECTRICAL</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=civ' style="color: white;">CIVIL</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=mechprod' style="color: white;">MECH/PROD</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=chem' style="color: white;">CHEMICAL</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=biot' style="color: white;">BIO-TECH</a></li>
-             <li><a  class="c"   href='items_list.php?category=books' style="color: white;">MISC</a></li>          
-           </ul>
-          </li>
-
-        <li><a href='items_list.php?category=bikes'>Bikes</a></li>
-        <li><a href='items_list.php?category=misc'>Misc</a></li>
-        <li><a href='seller_page.php'>Sell</a></li>
-        <li><a href="#footer">Contact</a></li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href='logout.php'><span class="glyphicon glyphicon-user"></span>Logout</a></li>
-        <li class="active"><a href='cart.php'><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
-      </ul>
-
-         
-      </div> <!-- .nav-collapse -->
-    </div> <!-- .container -->
-  </nav><br>
+<br>
 
   <div class="jumbotron" style="opacity: 0.5;">
   <div class="container text-center">
@@ -125,14 +92,14 @@ body{
 
 
 
-<div class="container">
-                                                                                      
-  <table>
+<div class="container" >
+  <div class="table-responsive table-hover text-centered col-sm-10" style="background-color: white;opacity: 0.7;margin-top: 50px;min-height: 0;" >                                                                                    
+  <table class="table">
     <thead>
       <tr>
-        <th>Item</th>
-        <th>Price</th>
-        <th></th>
+        <th class="text-center col-sm-3">Item</th>
+        <th class="text-center col-sm-4 offset4">Price</th>
+        <th class="text-center col-sm-1"></th>
       </tr>
     </thead>
     <tbody>
@@ -140,8 +107,8 @@ body{
         $books = mysqli_query($conn,"SELECT books.id, books.author, books.title, books.price FROM books INNER JOIN cart ON books.id = cart.item_id WHERE item_category = 'books' AND is_sold = 0 AND cart.reg = '".$_SESSION['user_reg']."'");//Query for books added to the cart by this user . 'books.price' to be added later
 
         while($row = mysqli_fetch_assoc($books)) {//Start a while loop here to display fetch items in this division?>
-          <tr>
-            <td>
+          <tr class="text-center">
+            <td class="pull-left">
               <?php echo $row['author']." ".$row['title'] ?>
             </td>
             <td>
@@ -158,8 +125,8 @@ body{
         $bikes = mysqli_query($conn,"SELECT bikes.id, bikes.brand, bikes.gear, bikes.price FROM bikes INNER JOIN cart ON bikes.id = cart.item_id WHERE item_category = 'bikes' AND is_sold = 0 AND cart.reg = '".$_SESSION['user_reg']."'");//Query for bikes added to the cart by this user . 'bikes.price' to be added later
       
         while($row = mysqli_fetch_assoc($bikes)) {//Start a while loop here to display fetch items in this division?>
-          <tr>
-            <td>
+          <tr class="text-center">
+            <td class="pull-left">
               <?php
               echo $row['brand']." ".$row['gear'] ?>
             </td>
@@ -177,8 +144,8 @@ body{
         $misc = mysqli_query($conn,"SELECT misc.id, misc.name, misc.price FROM misc INNER JOIN cart ON misc.id = cart.item_id WHERE item_category = 'misc' AND is_sold = 0 AND cart.reg = '".$_SESSION['user_reg']."'");//Query for misc added to the cart by this user . 'misc.price' to be added later
       
         while($row = mysqli_fetch_assoc($misc)) {//Start a while loop here to display fetch items in this division?>
-          <tr>
-            <td>
+          <tr class="text-center">
+            <td class="pull-left">
               <?php echo $row['name'] ?>
             </td>
             <td>
@@ -194,13 +161,17 @@ body{
         ?>
     </tbody>
   </table>
-        </div>
-          Cart Total :<?php echo $cart_total."<br>"; ?>
-
+  <br>
+</div>
+<span class="col-sm-7 pull-right" style="color: white;font-weight: bold;font-size: 35px;">Cart Total <?php echo $cart_total; ?></span>
+</div><br><br><br>
+          
 
           <?php if($cart_total > 0){ ?>
 
-            <div class="container">
+
+
+  <div class="container">
   
   <!-- Trigger the modal with a button -->
   <button type="submit" class="btn btn-default col-sm-2" id="mybtn" style="border-radius: 10px;margin-left: 40%;"><span class="glyphicon glyphicon-shopping-cart"></span>Checkout</button>
