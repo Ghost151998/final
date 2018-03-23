@@ -36,8 +36,8 @@
 				$result = mysqli_query($conn,"INSERT INTO cart (reg,item_id,item_category) VALUES ('".$_SESSION["user_reg"]."','".$_GET["item_id"]."','".$_GET["category"]."')");
 				//redirect to user_home.php while displaying success message
 				//echo "Item Added to Cart<br>";
-				$_SESSION["cart_count"]+=1;
-				header("Location: ".$redirect_to_cart);
+				$_SESSION["cart_count"] += 1;
+				//header("Location: ".$redirect_to_cart);
 			}
 		}
 	}

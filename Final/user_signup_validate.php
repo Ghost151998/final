@@ -32,6 +32,9 @@
 				$_SESSION["user_reg"] = $user_reg;
 				$_SESSION["user_name"] = $user_first_name;
 				//echo "<br>Successfully signed up, " . $_SESSION["user_name"];//Comment out this line,only for testing
+				//Sending query for number of items in cart
+				$result = mysqli_query($conn,"SELECT COUNT(reg) AS count FROM cart WHERE reg = '".$_SESSION["user_reg"]."' ");
+				$_SESSION["cart_count"] = mysqli_fetch_object($result)->count;
 				header("Location: ".$redirect_to_user_home);//redirect to main page
 			}
 

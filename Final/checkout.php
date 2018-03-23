@@ -22,7 +22,7 @@
 		mysqli_query($conn,"UPDATE ".$row['item_category']." SET is_sold = 1 WHERE ".$row['item_category'].".id = ".$row['item_id']." ");//Update is_sold of item in its respective table
 	}
 	//Send confirmation from this page
-	$_SESSION["cart_count"]=0;
+	$_SESSION["cart_count"] = 0;
 	header("Location: ".$redirect_to_user_home);
 ?>
 <?php 

@@ -19,7 +19,7 @@
 	print_r($_SESSION);
 
 	mysqli_query($conn,"DELETE FROM cart WHERE item_id = '".$_GET["item_id"]."' AND item_category = '".$_GET["category"]."'  AND cart.reg ='".$_SESSION["user_reg"]."'");
-	$_SESSION["cart_count"]-=1;
+	$_SESSION["cart_count"] -= 1;
 	header("Location: ".$redirect_to_cart);
 ?>
 <?php 
