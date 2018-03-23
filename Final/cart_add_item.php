@@ -2,7 +2,7 @@
 /*Verifies details of cart once logged in and clicked "add_to_cart" in book_description.No item description coming as of yet from books_list to book_description.*/
 	session_start();
 	include ("dbconfig.php");//Connection to database
-	include ("test_variables.php");
+	//include ("test_variables.php");
 
 	//$redirect_to_success = "user";//Set this to the main page
 	$redirect_to_item_description = "item_description.php";
@@ -36,7 +36,7 @@
 				$result = mysqli_query($conn,"INSERT INTO cart (reg,item_id,item_category) VALUES ('".$_SESSION["user_reg"]."','".$_GET["item_id"]."','".$_GET["category"]."')");
 				//redirect to user_home.php while displaying success message
 				//echo "Item Added to Cart<br>";
-				//header("Location: ".$redirect_to_cart);
+				header("Location: ".$redirect_to_cart);
 			}
 		}
 	}
@@ -50,5 +50,5 @@
 
 ?>
 <?php 
-	include ("test_variables.php");
+	//include ("test_variables.php");
 ?>

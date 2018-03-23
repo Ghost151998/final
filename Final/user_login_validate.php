@@ -17,6 +17,10 @@
 				$db_user = mysqli_fetch_object($result);
 				$_SESSION["user_reg"] = $db_user->user_reg;
 				$_SESSION["user_name"] = $db_user->first_name;
+
+				//Sending query for number of items in cart
+				$result = mysqli_query($conn,"SELECT COUNT(reg) AS count FROM cart WHERE reg = '".$_SESSION["user_reg"]."' ");
+				$_SESSION["cart_count"] = mysqli_fetch_object($result)->count;
 				//echo "<br>Welcome, " . $_SESSION["user_name"];//Comment out this line,only for testing
 				header("Location: ".$redirect_to_user_home);
 			}
