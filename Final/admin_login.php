@@ -47,7 +47,8 @@
   
    #text{
      margin-right: 15px;
-    margin-bottom: 15%;
+    margin-bottom: 20%;
+    margin-top: 10%;
    }
   
   </style>
@@ -66,7 +67,7 @@
         <div class="modal-header" style="padding:35px 50px;">
           <h4><span class="glyphicon glyphicon-lock"></span>Admin Login</h4>
         </div>
-        <div class="modal-body" style="padding:40px 50px;">
+        <div class="modal-body" style="padding:10% 5% 0;">
 
 
           <form role="form" action="admin_validate.php" method="post">
@@ -82,7 +83,7 @@
             </div>
             <br>
             
-            <div class="modal-footer" style="height:1px;" >             
+            <div class="modal-footer" style="height: 0;" >             
 
               <div class="row-fluid" >
                <button type="submit" value="Login" class="btn btn-default col-sm-4 offset4"  style="border-radius: 10px;"><span class="glyphicon glyphicon-off"></span>Login</button>

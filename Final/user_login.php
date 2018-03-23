@@ -46,7 +46,8 @@
 
     #text{
        margin-right: 15px;
-    margin-bottom: 15%;
+      margin-bottom: 20%;
+      margin-top: 10%;
     }
 
   
@@ -84,7 +85,7 @@
           
         </div>
         
-        <div class="modal-footer" style="height: 8%;">
+        <div class="modal-footer" >
           <div class="row-fluid" >
                 <button value="Login" type="submit" class="btn btn-default col-sm-4 offset4" style="border-radius: 30px;"><span class="glyphicon glyphicon-off"></span> Login</button>
               </div>

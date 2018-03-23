@@ -102,8 +102,8 @@
             </div>
 
             <div class="form-group">
-              <label for="mobile"><span class="glyphicon glyphicon-earphone" id="text"></span>Mobile No.</label>
-              <input type="text" name="user_phone_number" class="form-control required mobile" id="mobile" placeholder="^[0-9]{10}$" data-placement="right" data-trigger="manual" data-content="enter valid 10digit mobile no">
+              <label for="phone"><span class="glyphicon glyphicon-earphone" id="text"></span>Mobile No.</label>
+              <input type="text" name="user_phone_number" class="form-control required phone" id="phone" placeholder="^[0-9]{10}$" data-placement="right" data-trigger="manual" data-content="enter valid 10digit mobile no">
             </div>
 
             <div class="form-group">

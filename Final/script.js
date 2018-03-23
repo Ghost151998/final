@@ -11,6 +11,12 @@
         author: {
             regex:/^[A-Za-z]{3,50}$/
         },
+        title:{
+            regex:/^[A-Za-z]{3,50}$/
+        },
+        brand:{
+            regex:/^[A-Za-z]{3,30}$/
+        },
         edition: {
             regex: /^[0-9]{0,3}$/
         },
@@ -27,10 +33,10 @@
             regex: /^[a-zA-Z0-9\s]{5,500}$/
         },
        
-        firstName: {
+        first_Name: {
             regex: /^[A-Za-z]{3,30}$/
         },
-        lastName: {
+        last_Name: {
             regex: /^[A-Za-z]{3,50}$/
         },
        
