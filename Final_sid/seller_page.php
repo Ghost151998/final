@@ -104,7 +104,7 @@
 
             <div class="form-group" >
               <label for="book_branch">Branch</label>
-             <select name="book_branch" id="book_branch" class="form-control selectpicker" >
+             <select name="book_branch" id="book_branch" class="form-control " >
                <option value="cseit" selected >CSE/IT</option>
                <option value="ece" >ECE</option>
                <option value="chem" >Chemical</option>

@@ -40,12 +40,38 @@
         break;
       }
       case "bikes": {echo "Bikes";break;}
-      case "misc" : {echo "Misc";break;}
+      case "misc" : {echo "Misc Items";break;}
     }?></title>
   </head>
   <body>
 
     <?php include("nav.php"); ?>
+
+    <div class="jumbotron text-left" style="margin-top: 3%;">
+    <h2 class="col-sm-offset-2">
+      <?php switch($_GET["category"]){
+      case "books": {
+        if(!isset($_GET["book_branch"])){
+          echo "Books for the Beyond";
+        }
+        else{
+          switch($_GET["book_branch"]){
+            case "cseit": {echo "Computer Science/Information Technology";break;}
+            case "ece":{echo "Electronics and Communications";break;}
+            case "ee":{echo "Electrical";break;}
+            case "chem":{echo "Chemical";break;}
+            case "civ":{echo "Civil";break;}
+            case "biot":{echo "Biotechnology";break;}
+            case "mechprod":{echo "Mechanical/Production";break;}
+          }
+        }
+        break;
+      }
+      case "bikes": {echo "Bikes";break;}
+      case "misc" : {echo "Misc Items";break;}
+    }?>
+    </h2>
+  </div>
 
     <div class="col-sm-6"><!-- CONTAINER FOR ALL -->
       <hr>
@@ -55,6 +81,14 @@
 if($_GET["category"] == "books"){
 
   if(!isset($_GET["book_branch"])){ //Books without any semester
+    ?>
+     <div class="col-xs-3"><!-- required for floating buttons at left not to be included in loop-->
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs tabs-left sideways">
+        <li class="active"><a href="#misc_books" data-toggle="tab">Books for the beyond</a></li>
+      </ul>
+    </div>
+    <?php
     $results = mysqli_query($conn,"SELECT * FROM books WHERE is_sold = 0 AND sem IS NULL");//Find All non course book results
     if(mysqli_num_rows($results) > 0){ ?>
 
@@ -64,7 +98,7 @@ if($_GET["category"] == "books"){
     <div class="tab-content"><!-- Tab panes -->
 
       <!--3-8...1 for complete list -->
-      <div class="tab-pane active" id="sem1"> 
+      <div class="tab-pane active" id="misc_books"> 
       <div class="container"><!-- complete list of 1 sem -->
       <div class="row">
       <div class="gallery">
@@ -111,7 +145,7 @@ if($_GET["category"] == "books"){
     <div class="col-xs-3"><!-- required for floating buttons at left not to be included in loop-->
       <!-- Nav tabs -->
       <ul class="nav nav-tabs tabs-left sideways">
-        <li><a href="#sem3" data-toggle="tab">3rd Semester</a></li>
+        <li class="active"><a href="#sem3" data-toggle="tab" >3rd Semester</a></li>
         <li><a href="#sem4" data-toggle="tab">4th Semester</a></li>
         <li><a href="#sem5" data-toggle="tab">5th Semester</a></li>
         <li><a href="#sem6" data-toggle="tab">6th Semester</a></li>
@@ -179,15 +213,23 @@ if($_GET["category"] == "books"){
 
 
 if($_GET["category"] == "bikes"){
+  ?>
+     <div class="col-xs-3"><!-- required for floating buttons at left not to be included in loop-->
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs tabs-left sideways">
+        <li class="active"><a href="#bikes" data-toggle="tab">Bikes</a></li>
+      </ul>
+    </div>
+    <?php
       $results = mysqli_query($conn,"SELECT * FROM bikes WHERE is_sold = 0"); ?>
 
       <!-- LIST CONTAINER -->
-    <div class="col-sm-12"><!--column division for all detail tabs-->
+    <div class="col-sm-9"><!--column division for all detail tabs-->
       <!-- CHANGED THIS ^ FROM 9 TO 12 -->
     <div class="tab-content"><!-- Tab panes -->
 
       <!--3-8...1 for complete list -->
-      <div class="tab-pane active" id="sem1"> 
+      <div class="tab-pane active" id="bikes"> 
       <div class="container"><!-- complete list of 1 sem -->
       <div class="row">
       <div class="gallery">
@@ -230,15 +272,23 @@ if($_GET["category"] == "bikes"){
 
 
     if($_GET["category"] == "misc"){
+      ?>
+     <div class="col-xs-3"><!-- required for floating buttons at left not to be included in loop-->
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs tabs-left sideways">
+        <li class="active"><a href="#misc" data-toggle="tab">misc items</a></li>
+      </ul>
+    </div>
+    <?php
       $results = mysqli_query($conn,"SELECT * FROM misc WHERE is_sold = 0"); ?>
 
       <!-- LIST CONTAINER -->
-    <div class="col-sm-12"><!--column division for all detail tabs-->
+    <div class="col-sm-9"><!--column division for all detail tabs-->
       <!-- CHANGED THIS ^ FROM 9 TO 12 -->
     <div class="tab-content"><!-- Tab panes -->
 
       <!--3-8...1 for complete list -->
-      <div class="tab-pane active" id="sem1"> 
+      <div class="tab-pane active" id="misc"> 
       <div class="container"><!-- complete list of 1 sem -->
       <div class="row">
       <div class="gallery">

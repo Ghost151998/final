@@ -3,29 +3,17 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="30">
 <link rel="stylesheet" type="text/css" href="nav.css">
+<script src="bootstrap-hover-dropdown.js"></script>
 
 <style>
-    body{
-      background:url("4.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-       background-attachment: fixed;  
-         
-    }
-   
-    .affix{
-      top 0;
-      width: 100%;
-      z-index: 9999 !important;
-    }
-
-    .affix ~.fix{
-      position:fixed;
-    }
-
-
     
 </style>
+
+ <script>
+    $(document).ready(function() {
+    $('.js-activated').dropdownHover().dropdown();
+    })
+ </script>
 
 <nav class="navbar  navbar-inverse" data-spy="affix"  >
     <div class="container-fluid fix">

@@ -25,19 +25,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="nav.css">
-    <script src="snackbar.js"></script>
-    <link rel="stylesheet" type="text/css" href="snackbar.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="snackbar.js"></script>
+  <link rel="stylesheet" type="text/css" href="snackbar.css">
 
 <style >
-
-
     th,td{
       color: black;
       font-size: 20px;
     }
-
     .btn-default {
       border: 0.1px solid grey;
       background: white;
@@ -45,7 +41,6 @@
       margin-top: 20px;
       padding-bottom: 25px;    
    }
-
    .glyphicon-remove{
     color: red;
     font-size: 20px;
@@ -60,11 +55,7 @@
    }
    .trans{
     background: rgba(242, 232, 230,0.5);
-   }
-
-   
-    
-    
+   }   
 </style>
 
 </head>
@@ -81,7 +72,7 @@
 
 
 <div class="container" >
-  <div class="table-responsive table-hover text-centered col-sm-12 trans" style="margin-top: 50px;min-height: 0;" >                                                                                    
+  <div class="table-responsive table-hover text-centered col-sm-12" style="margin-top: 50px;min-height: 0;background: rgba(242, 232, 230,1);" >                                                                                    
   <table class="table">
     <thead>
       <tr>
@@ -151,7 +142,7 @@
   </table>
   <br>
 </div>
-<span class="col-sm-3 col-sm-offset-5 well well-sm trans text-center" style="color:black;font-weight: bold;font-size: 30px;margin-top: 2%;">Cart Total <?php echo $cart_total; ?></span>
+<span class="col-sm-3 col-sm-offset-5 text-center" style="color:white;font-weight: bold;font-size: 30px;margin-top: 2%;">Cart Total <?php echo $cart_total; ?></span>
 </div><br>
           
 
@@ -207,12 +198,10 @@
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js'></script>
-<script src="index.js"></script>
+
 
 <script>
-  $(document).ready(function() {
-      $('.js-activated').dropdownHover().dropdown();
-    });
+  
 
   $(document).ready(function(){
     $("#mybtn").click(function(){

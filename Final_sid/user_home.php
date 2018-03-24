@@ -31,20 +31,13 @@
   #section4 {padding-top:50px;height:40%;color: #fff; background-color: #00bcd4;}
   #section42 {padding-top:50px;height:40%;color: #fff; background-color: #009688;}
 
-    .back{
-      background:url("4.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-       background-attachment: fixed;  
-         
-    }
-
+   
        </style>
 
 </head>
 <body>
 
-  <div class="back">
+
 
 <?php include("nav.php"); ?>
 
@@ -86,7 +79,7 @@
 
 <!-- footer from footer.php common for every page-->
 <?php include("footer.php");?>
-</div>
+
 
 
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -100,6 +93,11 @@
     });
   </script>
 
+
+
+
+
+ 
 </body>
 </html>
 

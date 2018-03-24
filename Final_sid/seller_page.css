@@ -114,12 +114,8 @@
 
 
 select option{
-  background:black;
-  color: white;
+  background:#f0f0f0;
 }
- select:hover { 
-    background: white;
-    color: black;
-}
+
 
 
