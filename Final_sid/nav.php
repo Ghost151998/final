@@ -1,12 +1,34 @@
-<!-- THE NAV BAR.HIGHLIGHT THE PAGE CURRENTLY OPEN -->
+  <!-- THE NAV BAR.HIGHLIGHT THE PAGE CURRENTLY OPEN -->
 
 
 <body data-spy="scroll" data-target=".navbar" data-offset="30">
 <link rel="stylesheet" type="text/css" href="nav.css">
 
+<style>
+    body{
+      background:url("4.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+       background-attachment: fixed;  
+         
+    }
+   
+    .affix{
+      top 0;
+      width: 100%;
+      z-index: 9999 !important;
+    }
 
-<nav class="navbar  navbar-inverse" data-spy="affix" >
-    <div class="container-fluid ">
+    .affix ~.fix{
+      position:fixed;
+    }
+
+
+    
+</style>
+
+<nav class="navbar  navbar-inverse" data-spy="affix"  >
+    <div class="container-fluid fix">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" data-spy="affix">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -29,14 +51,15 @@
              ?> >
             <a href="#" class="dropdown-toggle js-activated">Books<b class="caret"></b></a>
             <ul class="dropdown-menu" >
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=cseit' >Computer Science/Information Technology</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=ece' >Electronics and Communications</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=ee'>Electrical</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=civ'>Civil</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=mechprod'>Mechanical/Production</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=chem'>Chemical</a></li>
-             <li><a  class="c"   href='items_list.php?category=books&book_branch=biot'>Biotechnology</a></li>
-             <li><a  class="c"   href='items_list.php?category=books'>Books for the Beyond</a></li>
+              <li><a    href='items_list.php?category=books&book_branch=civ'>Freshman year</a></li>
+             <li><a href='items_list.php?category=books&book_branch=cseit' >Computer Science/Information Technology</a></li>
+             <li><a  href='items_list.php?category=books&book_branch=ece' >Electronics and Communications</a></li>
+             <li><a    href='items_list.php?category=books&book_branch=ee'>Electrical</a></li>
+             <li><a    href='items_list.php?category=books&book_branch=civ'>Civil</a></li>
+             <li><a   href='items_list.php?category=books&book_branch=mechprod'>Mechanical/Production</a></li>
+             <li><a    href='items_list.php?category=books&book_branch=chem'>Chemical</a></li>
+             <li><a     href='items_list.php?category=books&book_branch=biot'>Biotechnology</a></li>
+             <li><a    href='items_list.php?category=books'>Books for the Beyond</a></li>
            </ul>
           </li>
 
@@ -63,6 +86,7 @@
     </div> <!-- .container -->
   </nav> <!-- .navbar -->
 
+  <br>
   
 
 

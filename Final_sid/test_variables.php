@@ -10,6 +10,6 @@
 	echo "<br>GET:<br>";
 	print_r($_GET);
 	echo "<br>SERVER:<br>";
-	print_r($_SERVER["REQUEST_URI"]);
+	print_r($_SERVER);
 	echo "<br><hr>";
 ?>

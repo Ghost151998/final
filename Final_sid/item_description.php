@@ -26,6 +26,7 @@
 					<meta charset="utf-8">
   					<meta name="viewport" value="width=device-width,intial-scale=1">
   					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  					<link rel="stylesheet" type="text/css" href="nav.css">
 					<title>Item Description</title>
 
 					 <style type="text/css">
@@ -63,7 +64,7 @@
 				<body>
 					<?php include("nav.php"); ?>
 
-					<div class="jumbotron" id="jumbo" style="opacity: 0.5;">
+					<div class="jumbotron trans" id="jumbo" >
 					  <div class="container">
 					    <h1>Item Description</h1>      
 					  </div>

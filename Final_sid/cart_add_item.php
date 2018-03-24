@@ -37,7 +37,7 @@
 				//redirect to user_home.php while displaying success message
 				//echo "Item Added to Cart<br>";
 				$_SESSION["cart_count"] += 1;
-				//header("Location: ".$redirect_to_cart);
+				header("Location: ".$redirect_to_cart);
 			}
 		}
 	}

@@ -26,24 +26,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <script src="snackbar.js"></script>
+    <link rel="stylesheet" type="text/css" href="snackbar.css">
 
 <style >
 
-body{
-      overflow:scroll;
-      background:url("4.jpg");
-      background-size: cover;
-    }
-
-    .affix{
-      top 0;
-      width: 100%;
-      z-index: 9999 !important;
-    }
-
-    .affix ~ .container-fluid{
-      position: relative;
-    }
 
     th,td{
       color: black;
@@ -54,7 +42,6 @@ body{
       border: 0.1px solid grey;
       background: white;
       color: black;
-      margin-left: 30%;
       margin-top: 20px;
       padding-bottom: 25px;    
    }
@@ -71,6 +58,9 @@ body{
      background: green;
       color: white;
    }
+   .trans{
+    background: rgba(242, 232, 230,0.5);
+   }
 
    
     
@@ -82,9 +72,7 @@ body{
 <body>
   <?php include("nav.php"); ?>
 
-<br>
-
-  <div class="jumbotron" style="opacity: 0.5;">
+  <div class="jumbotron trans" style="margin-top: 5%;" >
   <div class="container text-center">
     <h1 class="text-left">Your Cart</h1>      
   </div>
@@ -93,7 +81,7 @@ body{
 
 
 <div class="container" >
-  <div class="table-responsive table-hover text-centered col-sm-10" style="background-color: white;opacity: 0.7;margin-top: 50px;min-height: 0;" >                                                                                    
+  <div class="table-responsive table-hover text-centered col-sm-12 trans" style="margin-top: 50px;min-height: 0;" >                                                                                    
   <table class="table">
     <thead>
       <tr>
@@ -163,8 +151,8 @@ body{
   </table>
   <br>
 </div>
-<span class="col-sm-7 pull-right" style="color: white;font-weight: bold;font-size: 35px;">Cart Total <?php echo $cart_total; ?></span>
-</div><br><br><br>
+<span class="col-sm-3 col-sm-offset-5 well well-sm trans text-center" style="color:black;font-weight: bold;font-size: 30px;margin-top: 2%;">Cart Total <?php echo $cart_total; ?></span>
+</div><br>
           
 
           <?php if($cart_total > 0){ ?>
@@ -174,7 +162,7 @@ body{
   <div class="container">
   
   <!-- Trigger the modal with a button -->
-  <button type="submit" class="btn btn-default col-sm-2" id="mybtn" style="border-radius: 10px;margin-left: 40%;"><span class="glyphicon glyphicon-shopping-cart"></span>Checkout</button>
+  <button type="submit" class="btn btn-default col-sm-3 col-sm-offset-4" id="mybtn" style="border-radius: 10px;"><span class="glyphicon glyphicon-shopping-cart"></span>Checkout</button>
 
   <!-- Modal -->
   <div role="dialog" data-backdrop="static" data-keyboard="false" id="costumModal5" class="modal" data-easein="flipBounceYIn"  tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="true" style="margin-top: 10%;">
@@ -194,18 +182,22 @@ body{
 
         </div>
 
-        <div class="modal-footer">
+        <div class="modal-footer" >
           <a href="checkout.php">
-            <button type="submit"  class="btn btn-default col-sm-2" id="Conf_btn" style="border-radius: 10px;margin-left: 35%;width: 30%;"><span class="glyphicon glyphicon-shopping-cart"></span> Confirm Order</button>
+            <button type="submit"  onclick="display_snackbar()" class="btn btn-default col-sm-4 col-sm-offset-4" id="Conf_btn" style="border-radius: 10px"><span class="glyphicon glyphicon-shopping-cart"></span> Confirm Order</button>
+            <script>setTimeout(\"location.href = 'checkout.php';\",10000);</script>
          </a>
         </div>
       </div>
       
     </div>
   </div> 
+  <div id="snackbar">Some text some message..</div>
 </div>
 
         <?php  } ?>
+
+        <?php include("footer.php");?>
 
 
 

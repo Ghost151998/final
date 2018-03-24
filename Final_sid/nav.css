@@ -1,6 +1,6 @@
 .navbar-nav > li > .dropdown-menu
  {
-  background-color: black; 
+  background-color: #222222; 
 }
 
 .navbar-nav > li > .dropdown-menu a{
@@ -11,3 +11,5 @@
 	background-color: white;
 	color: black;
 	}
+
+

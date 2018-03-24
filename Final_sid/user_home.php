@@ -19,98 +19,74 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <style type="text/css">
-    
-    body{
-    position: relative;
+
+    .trans{
+    background: rgba(255,255,255,0.5);
+    margin-bottom: 5%; 
+   }
+
+    #section1 {padding-top:50px;height:40%;color: #fff; background: rgba(227, 67, 33,0.5);}
+  #section2 {padding-top:50px;height:40%;color: #fff; background-color: #673ab7;}
+  #section3 {padding-top:50px;height:40%;color: #fff; background-color: #ff9800;}
+  #section4 {padding-top:50px;height:40%;color: #fff; background-color: #00bcd4;}
+  #section42 {padding-top:50px;height:40%;color: #fff; background-color: #009688;}
+
+    .back{
+      background:url("4.jpg");
       background-size: cover;
-      
+      background-repeat: no-repeat;
+       background-attachment: fixed;  
+         
     }
-
-    .affix{
-      top 0;
-      width: 100%;
-      z-index: 9999 !important;
-    }
-
-    .affix ~ .container-fluid{
-      position: relative;
-    }
-
-    .c:hover{
-        color: black;
-    }
-   
-    
-   
-
-    #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
-  #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
-  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
-  #section4 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
-  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
 
        </style>
 
 </head>
+<body>
 
+  <div class="back">
 
 <?php include("nav.php"); ?>
 
-<div class="test" style="opacity: 0.7">
 
-
-<div class="jumbotron" id="jumbo">
+<div class="jumbotron trans" style="margin-top: 5%;margin-bottom: 10%; ">
   <div class="container text-center">
     <h1>The PassOn Store</h1>      
     <p>The MNNIT PassOn Portal</p>
   </div>
 </div>
 
-<br><br>
 
 
-<div id="section1" class="container">
+<div id="section1" class="container-fluid trans">
   <h1>Section 1</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section2" class="container-fluid">
+<div id="section2" class="container-fluid trans">
   <h1>Section 2</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section3" class="container-fluid">
+<div id="section3" class="container-fluid trans">
   <h1>Section 3</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section4" class="container-fluid">
+<div id="section4" class="container-fluid trans">
   <h1>Section 4 Submenu 1</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section42" class="container-fluid">
+<div id="section42" class="container-fluid trans">
   <h1>Section 4 Submenu 2</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
 
-
-
-
-
-
+<!-- footer from footer.php common for every page-->
+<?php include("footer.php");?>
 </div>
-
-<br>
-
-<div class="jumbotron" id="footer" style="color: white; background-color: grey;margin-top: 10px;height: 10px;">
-  <div class="container text-center">
-    <h2 >contact about</h2>      
-  </div>
-</div>
-
-
 
 
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>

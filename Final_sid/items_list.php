@@ -49,99 +49,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<style>
-
-body{
-      overflow:scroll;
-      background:url("4.jpg");	
-      background-size: cover;
-    }
-
-    .affix{
-      top 0;
-      width: 100%;
-      z-index: 9999 !important;
-    }
-
-    .affix ~ .container-fluid{
-      position: relative;
-    }
-
-
-  div.bhoechie-tab-container{
-  z-index: 10;
-  background-color: #ffffff;
-  padding: 0 !important;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  border:1px solid #ddd;
-  margin-top: 20px;
-  margin-left: 50px;
-  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  background-clip: padding-box;
-  opacity: 0.97;
-  filter: alpha(opacity=97);
-
-}
-div.bhoechie-tab-menu{
-  padding-right: 0;
-  padding-left: 0;
-  padding-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group{
-  margin-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group>a{
-  margin-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group>a .glyphicon,
-div.bhoechie-tab-menu div.list-group>a .fa {
-  color: #5A55A3;
-}
-div.bhoechie-tab-menu div.list-group>a:first-child{
-  border-top-right-radius: 0;
-  -moz-border-top-right-radius: 0;
-}
-div.bhoechie-tab-menu div.list-group>a:last-child{
-  border-bottom-right-radius: 0;
-  -moz-border-bottom-right-radius: 0;
-}
-div.bhoechie-tab-menu div.list-group>a.active,
-div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
-div.bhoechie-tab-menu div.list-group>a.active .fa{
-  background-color: #5A55A3;
-  background-image:inherit;
-  color: #ffffff;
-}
-div.bhoechie-tab-menu div.list-group>a.active:after{
-  content: '';
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  margin-top: -13px; 
-  border-left: 0;
-  border-bottom: 13px solid transparent;
-  border-top: 13px solid transparent;
-  border-left: 10px solid #5A55A3;
-}
-
-div.bhoechie-tab-content{
-  background-color: #ffffff;
-   border: 1px solid #eeeeee;
-  padding-left: 20px;
-  padding-top: 10px;
-  opacity: 1;
-  height: auto;
-}
-
-div.bhoechie-tab div.bhoechie-tab-content:not(.active){
-  display: none;
-}
-
-</style>
+  <link rel="stylesheet" type="text/css" href="list_style.css">
 
 
 </head>
@@ -202,14 +110,17 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
             $extension = strtolower(pathinfo($result[0],PATHINFO_EXTENSION));
             $img_path .= (".".$extension);
           ?>
-                <div class="well col-sm-3">
+          <div class="container">
+              <div class="row"
+                <div class="gallery">
                   <a href='item_description.php?category=<?php echo urlencode($_GET["category"]); ?>&item_id=<?php echo urlencode($row["id"]); ?>' id="description_1" >
                     <img src="<?php echo $img_path ?>" name="item_image" class="img-responsive" alt="image">
                     <span class="col-xs-8 text-left"><?php echo $row['title']; ?></span>
                     <span class="col-xs-4 text-right"><?php echo $row['price']; ?></span>
                   </a>
                 </div>
-
+                </div>
+              </div>  
           <?php 
           }
           ?>
@@ -226,33 +137,18 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
         
       if(isset($_GET["book_branch"])){ //Books for all semesters
         ?>
-        <div class="container" id="book_container" style="margin-bottom: 40px;">
-         <div class="row" style="margin-right: 10px;">       
-                    <div class="col-sm-2 bhoechie-tab-menu">
-                      <div class="list-group">
-                        <a href="#" class="list-group-item  text-center">
-                          <h4 class="glyphicon glyphicon-book"></h4><br/>1st Year
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <h4 class="glyphicon glyphicon-book"></h4><br/>3rd semester
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <h4 class="glyphicon glyphicon-book"></h4><br/>4th Semester
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <h4 class="glyphicon glyphicon-book"></h4><br/>5th Semester
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <h4 class="glyphicon glyphicon-book"></h4><br/>6th Semester
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <h4 class="glyphicon glyphicon-book"></h4><br/>7th Semester
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <h4 class="glyphicon glyphicon-book"></h4><br/>8th Semester
-                        </a>
-                      </div>
-                    </div> 
+        <div class="container-fluid" id="book_container" style="margin-bottom: 40px;">
+         <div class="row" style="margin-right: 10px;">  
+
+          <div class="col-xs-3"> <!-- required for floating -->
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs tabs-left sideways">
+            <li class="active"><a href="#sem1" data-toggle="tab">Sem1</a></li>
+            <li><a href="#profile-v" data-toggle="tab">Sem2</a></li>
+            <li><a href="#messages-v" data-toggle="tab">Sem3</a></li>
+            <li><a href="#settings-v" data-toggle="tab">Sem4</a></li>
+          </ul>
+        </div>
            
 
               <?php
@@ -279,17 +175,15 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
                   $img_path = $img_path.".".$extension;
                  ?>
                      
-              <div class=" bhoechie-tab ">
-                <div class="bhoechie-tab-content col-sm-8" id="mar" >
-                  <div class="col-sm-3 fill">
+              <div class="gallery">
                     <a href='item_description.php?category=<?php echo urlencode($_GET["category"]); ?>&item_id=<?php echo urlencode($row["id"]); ?>' id="description_1" >
-                       <img src="<?php echo $img_path?>" name="item_image" class="img-responsive" alt="image">
+                       <img src="<?php echo $img_path?>" name="item_image" class="img-responsive" alt="image" width="460" height="345">>
                        <span class="col-xs-8 text-left"><?php echo $row['title']; ?></span>
                         <span class="col-xs-4 text-right"><?php echo $row['price']; ?></span>
                      </a>
                   </div>
-                </div>  
-            </div>
+                 
+            
               <?php 
               } //all results of a semester
              } //if results for semester exist
@@ -383,30 +277,13 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 
 
 <script >
-  $(document).ready(function() {
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-    });
-});
+ 
 
 $(document).ready(function() {
       $('.js-activated').dropdownHover().dropdown();
     });
 
 
-$(document).ready(function(){
-  var i=0;
-  var margin = (i*7);
-  i++;
-$("#mar").css({
-    marginTop: 'margin'
-});
-});
 
 </script>
 

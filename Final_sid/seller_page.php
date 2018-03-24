@@ -20,6 +20,8 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js'></script>
 <script src="index.js"></script>
+<script src="snackbar.js"></script>
+<link rel="stylesheet" type="text/css" href="snackbar.css">
 
 
   <!-- for google icons -->
@@ -28,137 +30,15 @@
   <!-- for animation -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="seller_page.css">
 
     <title>Want to Sell?</title>
 
   <style>
 
-  body{
-    background:url("4.jpg");
-    background-size: cover;
-    font-size: 30px;
-  }
-
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white;
-      text-align: center;
-  }
-
-  .btn-default {
-
-     border: 0.1px solid grey;
-      background: white;
-      color: black;
-   }
-  .btn-default:hover {
-      background: #5cb85c;
-      color: white;
-   }
-
-   #remove{
-    padding: 30px;
-    opacity: 1;
-    size: 50px;
-    color: white;
-   }
-   #remove:hover{
-    color: #E74C3C;
-   }
-
-   #text{
-       margin-right: 15px;
-    margin-bottom: 5%;
-   }
-
-   input[type="text"],select{
-    margin-bottom: 30px;
-   }
   
-
-   label{
-    font-size: 20px;
-   }
-
-   /*radio button*/
-
-   .radio_label {
-  float: left;
-  margin-right: 10%;
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 2%;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.radio_label input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom radio button */
-.radio_check {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.radio_label:hover input ~ .radio_check {
-    background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.radio_label input:checked ~ .radio_check {
-    background-color: #2196F3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.radio_check:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.radio_label input:checked ~ .radio_check:after {
-    display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.radio_label .radio_check:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-}
-
-.category_select{
-  float: left;
-  margin-top: 2%;
-  margin-bottom: 5%;
-}
-
-option{
-  background-color: black;
-  color: white;
-  font-size: 15px;
-}
-    </style>
+  
+  </style>
 </head>
 
 <body>
@@ -224,15 +104,15 @@ option{
 
             <div class="form-group" >
               <label for="book_branch">Branch</label>
-             <select name="book_branch" id="book_branch" class="form-control" >
-               <option value="cseit" selected>CSE/IT</option>
-               <option value="ece">ECE</option>
-               <option value="chem">Chemical</option>
-               <option value="civ">Civil</option>
-               <option value="biot">Biotechnology</option>
-               <option value="mechprod">Mechanical/Production</option>
-               <option value="ee">Electrical</option>
-               <option value="null">Misc Books</option>
+             <select name="book_branch" id="book_branch" class="form-control selectpicker" >
+               <option value="cseit" selected >CSE/IT</option>
+               <option value="ece" >ECE</option>
+               <option value="chem" >Chemical</option>
+               <option value="civ" >Civil</option>
+               <option value="biot" >Biotechnology</option>
+               <option value="mechprod" >Mechanical/Production</option>
+               <option value="ee" >Electrical</option>
+               <option value="null" >Misc Books</option>
              </select>
             </div>
 
@@ -315,7 +195,7 @@ option{
             </select>
 
              <div class="price">
-              <label for="price">Price(Rs)</label>
+              <label for="price">&#8377; Price</label>
               <input type="text" name="price" class="form-control required price" id="price"  data-placement="right" data-trigger="manual" data-content="doesn't match with above password">
             </div>            
 
@@ -333,18 +213,15 @@ option{
         <br>
         <div class="modal-footer" style="padding-bottom: 6%;">
 
-           <button type="submit" name="seller_submitbtn" value="Submit for Verification" class="btn btn-default col-sm-4" style="border-radius: 30px;"><span class="glyphicon glyphicon-off"></span>Submit for Verification</button>
-              
-
-			
-          
-          <p style="font-size: 20px;"></p>
+           <button type="submit" name="seller_submitbtn" onclick="display_snackbar()" value="Submit for Verification" class="btn btn-default col-sm-4 col-sm-offset-4" style="border-radius: 30px;"><span class="glyphicon glyphicon-off"></span>Submit for Verification</button>
+           
           
         </div>
       </form>
       </div>
       
     </div>
+    <div id="snackbar">Some text some message..</div>
   </div> 
 
  
