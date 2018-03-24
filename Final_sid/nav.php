@@ -37,13 +37,13 @@
         <ul class="nav navbar-nav">
             <li <?php if($current_uri == "user_home.php"){echo "class='active'";} ?> ><a href="user_home.php" id="home">Home</a></li>
           <li class='dropdown <?php 
-              if( $current_uri == "items_list.php?category=books&book_branch=cseit" ||  $current_uri == "items_list.php?category=books&book_branch=ece" ||  $current_uri == "items_list.php?category=books&book_branch=ee" ||  $current_uri == "items_list.php?category=books&book_branch=chem" ||  $current_uri == "items_list.php?category=books&book_branch=mechprod" ||  $current_uri == "items_list.php?category=books&book_branch=civ" ||  $current_uri == "items_list.php?category=books&book_branch=biot" ||  $current_uri == "items_list.php?category=books" )
+              if( $current_uri == "items_list.php?category=books&book_sem=1" || $current_uri == "items_list.php?category=books&book_branch=cseit" || $current_uri == "items_list.php?category=books&book_branch=ece" ||  $current_uri == "items_list.php?category=books&book_branch=ee" ||  $current_uri == "items_list.php?category=books&book_branch=chem" ||  $current_uri == "items_list.php?category=books&book_branch=mechprod" ||  $current_uri == "items_list.php?category=books&book_branch=civ" ||  $current_uri == "items_list.php?category=books&book_branch=biot" ||  $current_uri == "items_list.php?category=books" )
                 {echo " active' ";}
               else{echo "' ";}
              ?> >
             <a href="#" class="dropdown-toggle js-activated">Books<b class="caret"></b></a>
             <ul class="dropdown-menu" >
-              <li><a href='items_list.php?category=books&book_branch=civ'>Freshman year</a></li>
+              <li><a href='items_list.php?category=books&book_sem=1'>Freshman year</a></li>
              <li><a href='items_list.php?category=books&book_branch=cseit' >Computer Science/Information Technology</a></li>
              <li><a  href='items_list.php?category=books&book_branch=ece' >Electronics and Communications</a></li>
              <li><a    href='items_list.php?category=books&book_branch=ee'>Electrical</a></li>

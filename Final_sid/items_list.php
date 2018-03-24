@@ -23,8 +23,11 @@
     <title>
       <?php switch($_GET["category"]){
       case "books": {
-        if(!isset($_GET["book_branch"])){
+        if(!isset($_GET["book_branch"]) && !isset($_GET["book_sem"])){
           echo "Books for the Beyond";
+        }
+        else if(!isset($_GET["book_branch"]) && ($_GET["book_sem"] == 1)){
+          echo "Freshman Year";
         }
         else{
           switch($_GET["book_branch"]){
@@ -51,8 +54,11 @@
     <h2 class="col-sm-offset-2">
       <?php switch($_GET["category"]){
       case "books": {
-        if(!isset($_GET["book_branch"])){
+        if(!isset($_GET["book_branch"]) && !isset($_GET["book_sem"])){
           echo "Books for the Beyond";
+        }
+        else if(!isset($_GET["book_branch"]) && ($_GET["book_sem"] == 1)){
+          echo "Freshman Year";
         }
         else{
           switch($_GET["book_branch"]){
@@ -80,7 +86,7 @@
 <?php
 if($_GET["category"] == "books"){
 
-  if(!isset($_GET["book_branch"])){ //Books without any semester
+  if(!isset($_GET["book_branch"]) && !isset($_GET["book_sem"])){ //Books without any semester
     ?>
      <div class="col-xs-3"><!-- required for floating buttons at left not to be included in loop-->
       <!-- Nav tabs -->
@@ -137,7 +143,64 @@ if($_GET["category"] == "books"){
     }
   }//BOOKS WITHOUT A BRANCH
 
-  //*********INCLUDE FRESHMAN CODE*********
+  //*********INCLUDED FRESHMAN CODE*********
+  if(!isset($_GET["book_branch"]) && ($_GET["book_sem"] == 1)){ //Books without any semester
+    ?>
+     <div class="col-xs-3"><!-- required for floating buttons at left not to be included in loop-->
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs tabs-left sideways">
+        <li class="active"><a href="#misc_books" data-toggle="tab">Books for the beyond</a></li>
+      </ul>
+    </div>
+    <?php
+    $results = mysqli_query($conn,"SELECT * FROM books WHERE is_sold = 0 AND sem = 1");//Find All non course book results
+    if(mysqli_num_rows($results) > 0){ ?>
+
+    <!-- LIST CONTAINER -->
+    <div class="col-sm-9"><!--column division for all detail tabs-->
+      <!-- CHANGED THIS ^ FROM 9 TO 12 -->
+    <div class="tab-content"><!-- Tab panes -->
+
+      <!--3-8...1 for complete list -->
+      <div class="tab-pane active" id="misc_books"> 
+      <div class="container"><!-- complete list of 1 sem -->
+      <div class="row">
+      <div class="gallery">
+
+      <?php while($row = mysqli_fetch_assoc($results)){ ?>
+
+          <?php
+            $img_path = "images/books/books_".$row['id'];
+            $img_src = $img_path.".*";
+            $result = glob($img_src);
+            $extension = strtolower(pathinfo($result[0],PATHINFO_EXTENSION));
+            $img_path .= (".".$extension);
+          ?>
+
+          <figure>
+            <a href='item_description.php?category=<?php echo urlencode($_GET["category"]); ?>&item_id=<?php echo urlencode($row["id"])?>'>
+            <img src="<?php echo $img_path?>" name="item_image" alt="image">
+            <figcaption><span class="col-xs-8 text-left"><?php echo $row['title']; ?></span>
+              <small><span class="col-xs-4 text-right"><?php echo $row['price']; ?></span></small>
+            </figcaption>
+            </a>
+          </figure>
+          
+
+      <?php 
+      }
+      ?>
+      </div>
+      </div>
+      </div>
+      </div>
+
+    </div>
+    </div>
+      <?php
+    }
+  }//BOOKS WITHOUT A BRANCH
+  //INCLUDED FRESHMAN CODE
 
   else{ //Books for all semesters
     ?>
