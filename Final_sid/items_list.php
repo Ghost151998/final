@@ -276,7 +276,7 @@ if($_GET["category"] == "bikes"){
      <div class="col-xs-3"><!-- required for floating buttons at left not to be included in loop-->
       <!-- Nav tabs -->
       <ul class="nav nav-tabs tabs-left sideways">
-        <li class="active"><a href="#misc" data-toggle="tab">misc items</a></li>
+        <li class="active"><a href="#misc" data-toggle="tab">Misc Items</a></li>
       </ul>
     </div>
     <?php

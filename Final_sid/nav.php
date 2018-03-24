@@ -24,7 +24,11 @@
       </button>
       <a class="navbar-brand col-sm-1" href="#footer">Logo</a>
       <?php 
-        $common_uri = "/Final_sid/"; //Fill this with the current directory
+        
+        $dir = explode("/", $_SERVER["REQUEST_URI"]);
+        $last = end($dir);
+        $common_uri = str_replace($last, "", $_SERVER["REQUEST_URI"]);
+        
         $current_uri = str_replace( $common_uri, "", $_SERVER["REQUEST_URI"]);
         //echo $current_uri;
       ?>
@@ -39,7 +43,7 @@
              ?> >
             <a href="#" class="dropdown-toggle js-activated">Books<b class="caret"></b></a>
             <ul class="dropdown-menu" >
-              <li><a    href='items_list.php?category=books&book_branch=civ'>Freshman year</a></li>
+              <li><a href='items_list.php?category=books&book_branch=civ'>Freshman year</a></li>
              <li><a href='items_list.php?category=books&book_branch=cseit' >Computer Science/Information Technology</a></li>
              <li><a  href='items_list.php?category=books&book_branch=ece' >Electronics and Communications</a></li>
              <li><a    href='items_list.php?category=books&book_branch=ee'>Electrical</a></li>
