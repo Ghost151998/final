@@ -18,6 +18,18 @@
   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="bootstrap-hover-dropdown.js"></script>
+
+  <script>
+    // very simple to use!
+    $(document).ready(function() {
+      $('.js-activated').dropdownHover().dropdown();
+    });
+  </script>
+
     <style type="text/css">
 
     .trans{
@@ -82,16 +94,7 @@
 
 
 
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <script src="bootstrap-hover-dropdown.js"></script>
-
-  <script>
-    // very simple to use!
-    $(document).ready(function() {
-      $('.js-activated').dropdownHover().dropdown();
-    });
-  </script>
+  
 
 
 
