@@ -3,7 +3,7 @@
 <?php 
 	session_start();
 	include ("dbconfig.php");//Connection to database
-	include ("test_variables.php");
+	//include ("test_variables.php");
 
 	$redirect_to_cart = "cart.php";
 	$redirect_to_user_login = "user_login.php";
@@ -23,5 +23,5 @@
 	header("Location: ".$redirect_to_cart);
 ?>
 <?php 
-	include ("test_variables.php");
+	//include ("test_variables.php");
 ?>

@@ -3,6 +3,7 @@
 <!-- SUGGESTION : UPDATE AFTER 30 MINS -->
 <?php
   session_start();
+  $_SESSION["previous_page"] = $_SERVER["REQUEST_URI"];
   include ("dbconfig.php");//Connection to database
   //include ("test_variables.php");
 

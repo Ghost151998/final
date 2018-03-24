@@ -1,6 +1,7 @@
 <!-- Admin Main Page -->
 <?php
 	session_start();
+	$_SESSION["previous_page"] = $_SERVER["REQUEST_URI"];
 	include ("dbconfig.php");
 	//include ("test_variables.php");
 

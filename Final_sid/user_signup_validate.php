@@ -2,7 +2,7 @@
 /*Verifies Sign-in data and updates DB if no clashes.Takes to main page with set SESSION variables on success and to user_signup.php otherwise...Also overload back button in js*/
 	session_start();
 	include ("dbconfig.php");//Connection to database
-	include ("test_variables.php");
+	//include ("test_variables.php");
 	$redirect_to_user_home = "user_home.php";//Set this to the main page
 	$redirect_to_user_signup = "user_signup.php";
 
@@ -54,5 +54,5 @@
 
 ?>
 <?php 
-	include ("test_variables.php");
+	//include ("test_variables.php");
 ?>

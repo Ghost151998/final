@@ -2,7 +2,7 @@
 /*Validates admin login credentials for authorizing to admin_page*/
 	include ("session_refresh.php");
 	include ("dbconfig.php");//Connection to database
-	include ("test_variables.php");
+	//include ("test_variables.php");
 
 	//$_SESSION  = array();//To clear session data
 	$redirect_to_admin_main = "admin_main.php";//Set this to the page to redirect on verification
@@ -24,7 +24,7 @@
 			else{//Die in this,or redirect to login
 				//echo "<br>Login Failed";
 				$_SESSION  = array();
-				header("Location: ".$redirect_to_admin_login);//Redirect to Admin Login
+				header("Location: ".$_SESSION["previous_page"]);//Redirect to previous page
 			}
 		}
 	}
@@ -38,5 +38,5 @@
 
 ?>
 <?php 
-	include ("test_variables.php");
+	//include ("test_variables.php");
 ?>

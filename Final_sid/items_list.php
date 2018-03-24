@@ -1,6 +1,7 @@
 <!-- BOOKS LIST PAGE!!!Remember to place a div and format this category.No images added as of yet. Give classes for formatting.-->
 <?php
   session_start();
+  $_SESSION["previous_page"] = $_SERVER["REQUEST_URI"];
   include ("dbconfig.php");
   //include ("test_variables.php");
   
