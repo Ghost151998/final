@@ -66,9 +66,8 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">       
-
          <li class="dropdown">
-            <a href="#" class="dropdown-toggle js-activated">log<?php echo $_SESSION["user_name"]; ?><b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle js-activated">Welcome,  <?php echo $_SESSION["user_name"]; ?><b class="caret"></b></a>
 
             <ul class="dropdown-menu dropdown-menu-left">
                <li><a href='logout.php'>Logout</a></li>
