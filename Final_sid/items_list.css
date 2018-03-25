@@ -62,3 +62,8 @@ img {
 .gallery figure figcaption {
   display: block;
 }
+
+.thumb img{
+  height: 200px;
+  width: 100%;
+}
