@@ -129,7 +129,6 @@
           <tr>
             <td data-th="Product">
               <div class="row">
-                <div class="col-sm-2 hidden-xs"><img src="#" alt="..." class="img-responsive"/></div>
                   <div class="col-sm-10">
                     <?php echo $row['author']." ".$row['title'] ?>
                   </div>
@@ -152,7 +151,6 @@
           <tr>
             <td data-th="Product">
               <div class="row">
-                <div class="col-sm-2 hidden-xs"><img src="#" alt="..." class="img-responsive"/></div>
                   <div class="col-sm-10">
                     <?php echo $row['brand']." ".$row['gear'] ?>
                   </div>
@@ -176,7 +174,6 @@
           <tr>
             <td data-th="Product" >
               <div class="row">
-                <div class="col-sm-2 hidden-xs"><img src="#" alt="..." class="img-responsive"/></div>
                   <div class="col-sm-10">
                     <?php echo $row['name'] ?>
                   </div>
@@ -198,7 +195,7 @@
     <tfoot>           
             <tr>
               <td colspan="1"></td>
-              <td class="hidden-xs text-center"><strong>Cart Total <?php echo $cart_total; ?></strong></td>
+              <td ><strong style="margin-left: 22%;">Cart Total <?php echo $cart_total; ?></strong></td>
               <td></td>
             </tr>
           </tfoot>
@@ -214,7 +211,7 @@
   <div class="container">
   
   <!-- Trigger the modal with a button -->
-  <button type="submit" class="btn btn-default col-sm-3 col-sm-offset-4" id="mybtn" style="border-radius: 10px;"><span class="glyphicon glyphicon-shopping-cart"></span>Checkout</button>
+  <button type="submit" class="btn btn-default col-sm-3 col-sm-offset-4" id="mybtn" style="border-radius: 10px;margin-top: 10%;"><span class="glyphicon glyphicon-shopping-cart"></span>Checkout</button>
 
   <!-- Modal -->
   <div role="dialog" data-backdrop="static" data-keyboard="false" id="costumModal5" class="modal" data-easein="flipBounceYIn"  tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="true" style="margin-top: 10%;">
