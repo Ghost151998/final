@@ -2,10 +2,9 @@
 /*Validates item details form from the seller page to queue for authentication from admins*/
 	session_start();
 	include ("dbconfig.php");//Connection to database
-	//include ("test_variables.php");
+	include ("test_variables.php");
 
 	$redirect_to_user_login = "user_login.php";
-	$redirect_to_user_home = "user_home.php";
 
 	//Check if user is logged in
 	if(!$_SESSION["user_reg"]){//Login failed.Redirect to user_login.php
@@ -108,9 +107,7 @@
 				}	
 				//END IMAGE UPLOAD
 
-				//echo "<br>Entry submitted for admin verification.<br><br>Thank You!<br>";
-				//SEND COMFIRMATION
-				header("Location: ".$redirect_to_user_home);
+				echo "<br>Entry submitted for admin verification.<br><br>Thank You!<br>";
 			}
 		}
 	}
@@ -124,5 +121,5 @@
 
 ?>
 <?php 
-	//include ("test_variables.php");
+	include ("test_variables.php");
 ?>

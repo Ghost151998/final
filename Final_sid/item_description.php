@@ -2,7 +2,6 @@
 
 <?php
 	session_start();
-	$_SESSION["previous_page"] = $_SERVER["REQUEST_URI"];
 	include ("dbconfig.php");//Connection to database
 	//include ("test_variables.php");
 
@@ -44,7 +43,9 @@
 					<title>Item Description</title>
 
 					 <style type="text/css">
-    					   				    
+    					   body{
+    					   	background-color: #ffffff;
+    					   }				    
 					    .big{
 					    	font-size: 15px;
 					    	text-align: left;

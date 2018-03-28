@@ -1,6 +1,5 @@
 <?php 
 	include ("session_refresh.php");
-  $_SESSION["previous_page"] = $_SERVER["REQUEST_URI"];
 	//include ("test_variables.php");
 ?>
 <!-- User Login Page -->

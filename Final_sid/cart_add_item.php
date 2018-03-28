@@ -25,7 +25,7 @@
 
 			if(mysqli_num_rows($result) != 0){
 				//echo "Item already added to cart<br>";
-				header("Location: ".$_SESSION["previous_page"]);
+				
 				//redirect to item_description.php and display the above line there.
 				//SUGGESTION: NOT TO REDIRECT TO THIS PAGE TO CHECK IF CART HAS THIS ITEM.INSTEAD,POP A DIALOG ON THE SAME PAGE...WILL HAVE TO CHECK HOW TO DO THAT
 			}
@@ -37,7 +37,7 @@
 				//redirect to user_home.php while displaying success message
 				//echo "Item Added to Cart<br>";
 				$_SESSION["cart_count"] += 1;
-				header("Location: ".$_SESSION["previous_page"]);
+				header("Location: ".$redirect_to_cart);
 			}
 		}
 	}

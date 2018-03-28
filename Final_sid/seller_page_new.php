@@ -33,33 +33,32 @@
     <link rel="stylesheet" type="text/css" href="seller_page.css">
 
     <title>Want to Sell?</title>
-   
 
+  <style>
+
+  
+  
+  </style>
 </head>
 
 <body>
+  <?php include("nav.php"); ?><style>
+  body{
+    background-color: #f1f3f6;
+  }
+</style>
 
-  <!-- Modal -->
- <div id="costumModal11" class="modal" data-easein="bounceUpIn"  tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="true"  data-backdrop="static" data-keyboard="false" 11111111>
-  
-
-    <div class="modal-dialog" style="margin: 10vh auto 0px auto;width: 60%;margin-bottom: 5%;">
-    
-      <!-- Modal content-->
-      <div class="modal-content" style="opacity: 0.9;">
-        <div class="modal-header" style="padding:35px 50px;">
-          <a href="user_home.php"><button type="button" class="close" id="remove"><span class="glyphicon glyphicon-remove"></span></button></a>
-          <h2>&#8377; Seller Form</h2>
-        </div>
+<div class="container" style="margin-top: 5%;background-color: #ffffff; width: 60%;padding:0;">              
+      <div style="background-color:#5cb85c;height: 20%;">
+        <h1 class="header text-center" style="font-size: 40px;padding-top:7%;margin: 0 ;">&#8377; Seller Form</h1>
+       </div> 
         <div class="modal-body" style="padding:40px 50px; margin-bottom: 30px;">
-
-
           <form role="form" action="sell_request_verification.php" method="post" enctype="multipart/form-data">
 
 
 
           <div class="category_select col-sm-12" style="margin-bottom:10%;">
-            <div class="form-group" id="cat"><label for="cat" class="pull-left" style="margin-right: 10%;font-size: 28px;">What is it???</label>
+            <div class="form-group" id="cat"><label for="cat" class="pull-left" style="font-size: 28px;">What is it???</label>
     
               <label class="radio_label">Books
                   <input type="radio" name="category" id="radio_book" class="radio_btn required" value="books"  >
@@ -202,36 +201,21 @@
                <!-- <input type="file" name="image2_misc" id="image2_misc">
                              <input type="file" name="image3_misc" id="image3_misc"> -->
 
-              </div>
-             
-        
+              </div>                     
         </div>
         <br>
         <div class="modal-footer" style="padding-bottom: 6%;">
 
-           <button type="submit" name="seller_submitbtn" onclick="display_snackbar()" value="Submit for Verification" class="btn btn-default col-sm-4 col-sm-offset-4" style="border-radius: 30px;"><span class="glyphicon glyphicon-off"></span>Submit for Verification</button>
-           
+           <button type="submit" name="seller_submitbtn" onclick="display_snackbar()" value="Submit for Verification" class="btn btn-default col-sm-4 col-sm-offset-4" style="border-radius: 30px;"><span class="glyphicon glyphicon-off"></span>Submit for Verification</button>           
           
         </div>
       </form>
       </div>
-      
-    </div>
-    <div id="snackbar">Some text some message..</div>
-  </div> 
 
- 
+  <?php include("footer.php");?>
+
 <script>
-
-// for dialoge animation
-$(document).ready(function(){
-    $(function(){
-        $("#costumModal11").modal();
-    });
-});
-
-
-//for hiding specific category on radio button check
+    //for hiding specific category on radio button check
 
 $(document).ready(function(){
   $("#book,#bike,#misc").fadeOut();
@@ -259,7 +243,6 @@ $("#radio_misc").click(function(){
 });
 
 
-
 //hiding sem on branch=other
 $(document).ready(function(){
   $("#book_branch").click(function(){
@@ -272,18 +255,12 @@ if ($("#book_branch").val() == "null") {
 });
 });
 
-
 </script>
 
 <script src="script.js"></script>
-
-
-
-
-
 </body>
 </html>
-	<?php } ?>
+  <?php } ?>
 <?php 
-	//include ("test_variables.php");
+  //include ("test_variables.php");
 ?>

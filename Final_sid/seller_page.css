@@ -1,11 +1,5 @@
-.modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white;
-      text-align: center;
-  }
-
+  
   .btn-default {
-
      border: 0.1px solid grey;
       background: white;
       color: black;
@@ -116,6 +110,12 @@
 select option{
   background:#f0f0f0;
 }
+
+.modal-backdrop{
+  background-color: #ffffff;
+}
+ 
+
 
 
 

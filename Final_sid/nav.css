@@ -23,9 +23,6 @@
 }
      
 
-
-
-
 .navbar-nav > li > .dropdown-menu
  {
   background-color: #222222;
@@ -45,4 +42,6 @@
 	border-radius: 8px;
 }
 
-
+#number{
+  vertical-align: top;
+}

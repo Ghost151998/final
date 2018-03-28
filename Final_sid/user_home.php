@@ -1,7 +1,6 @@
 <!-- USER HOME -->
 <?php 
 	session_start();
-	$_SESSION["previous_page"] = $_SERVER["REQUEST_URI"];
 	include ("dbconfig.php");//Connection to database
 	//include ("test_variables.php");
 
@@ -14,22 +13,11 @@
 ?>
 <html>
 <head>
+    
     <meta charset="utf-8">
     <meta name="viewport" value="width=device-width,intial-scale=1">
   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <script src="bootstrap-hover-dropdown.js"></script>
-
-  <script>
-    // very simple to use!
-    $(document).ready(function() {
-      $('.js-activated').dropdownHover().dropdown();
-    });
-  </script>
 
     <style type="text/css">
 
@@ -40,7 +28,7 @@
 
     #section1 {padding-top:50px;height:40%;color: #fff; background: rgba(227, 67, 33,0.5);}
   #section2 {padding-top:50px;height:40%;color: #fff; background-color: #673ab7;}
-  #section3 {padding-top:50px;height:40%;color: #fff; background-color: #ff9800;}
+  #section3 {padding-top:50px;height:40%;color: #fff; background-color: #ff98 00;}
   #section4 {padding-top:50px;height:40%;color: #fff; background-color: #00bcd4;}
   #section42 {padding-top:50px;height:40%;color: #fff; background-color: #009688;}
 
@@ -50,7 +38,7 @@
 </head>
 <body>
 
-
+<?php include("load_anim.php");?>
 
 <?php include("nav.php"); ?>
 
@@ -95,7 +83,16 @@
 
 
 
-  
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="bootstrap-hover-dropdown.js"></script>
+
+  <script>
+    // very simple to use!
+    $(document).ready(function() {
+      $('.js-activated').dropdownHover().dropdown();
+    });
+  </script>
 
 
 

@@ -2,7 +2,7 @@
 /*Validates user login credentials for authorizing to main site*/
 	session_start();
 	include ("dbconfig.php");//Connection to database
-	//include ("test_variables.php");
+	include ("test_variables.php");
 	
 	$redirect_to_user_home = "user_home.php";//Set this to the page to redirect on verification
 	$redirect_to_user_login = "user_login.php";
@@ -27,7 +27,7 @@
 			else{//Die in this,or redirect to login on failure
 				//echo "<br>Login Failed";
 				$_SESSION  = array();
-				header("Location: ".$redirect_to_user_login);//Redirect to User Login
+				header("Location: ".$redirect_to_user_login);//Redirect to Admin Login
 			}
 		}
 	}
@@ -41,5 +41,5 @@
 
 ?>
 <?php 
-	//include ("test_variables.php");
+	include ("test_variables.php");
 ?>

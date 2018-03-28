@@ -5,15 +5,6 @@
 <link rel="stylesheet" type="text/css" href="nav.css">
 <script src="bootstrap-hover-dropdown.js"></script>
 
-<style>
-  /*  body{
-      background:url("4.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-       background-attachment: fixed;  
-         
-    } */
-</style>
 
  <script>
     $(document).ready(function() {
@@ -61,8 +52,8 @@
 
         <li <?php if($current_uri == "items_list.php?category=bikes"){echo "class='active'";} ?> ><a href='items_list.php?category=bikes'>Bikes</a></li>
         <li <?php if($current_uri == "items_list.php?category=misc"){echo "class='active'";} ?> ><a href='items_list.php?category=misc'>Misc</a></li>
-        <li <?php if($current_uri == "seller_page.php"){echo "class='active'";} ?> ><a href='seller_page.php' id="sell">Sell</a></li>
-        <li><a href="#">Contact</a></li>
+        <li <?php if($current_uri == "seller_page_new.php"){echo "class='active'";} ?> ><a href='seller_page_new.php' id="sell">Sell</a></li>
+        <li <?php if($current_uri == "about_us.php"){echo "class='active'";} ?> ><a href='about_us.php' id="about_us">About Us</a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">       
@@ -73,7 +64,7 @@
                <li><a href='logout.php'>Logout</a></li>
             </ul></li>
 
-        <li <?php if($current_uri == "cart.php"){echo "class='active'";} ?> ><a href='cart.php'><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="pull-right col-sm-1"><?php echo $_SESSION["cart_count"]; ?></span></a></li>
+        <li <?php if($current_uri == "cart.php"){echo "class='active'";} ?> ><a href='cart.php'><i class="glyphicon glyphicon-shopping-cart"></i>Cart<label id="number" class="pull-right col-sm-1" id="number"><?php echo $_SESSION["cart_count"]; ?></label></a></li>
       </ul>
 
          
