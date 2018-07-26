@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2018 at 10:47 PM
+-- Generation Time: Jul 26, 2018 at 06:52 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -39,7 +39,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_code`, `admin_password`, `admin_name`) VALUES
-('siddhant', '1234', 'Nihilistimistic');
+('siddhant', '123456', 'Nihilistimistic');
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,7 @@ CREATE TABLE `bikes` (
 --
 
 INSERT INTO `bikes` (`id`, `seller`, `gear`, `brand`, `colour`, `quality`, `description`, `price`, `is_sold`) VALUES
-(1, '20168059', 1, 'Atlas Nixer', 'Red', 'good', 'Highly maintained...you won\'t need to do much.', '2000', 0);
+(1, '20168059', 1, 'Atlas Nixer', 'Red', 'good', 'Highly maintained...you won\'t need to do much.', '2000', 1);
 
 -- --------------------------------------------------------
 
@@ -91,12 +91,12 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `author`, `title`, `edition`, `seller`, `branch`, `sem`, `description`, `quality`, `price`, `is_sold`) VALUES
-(1, 'RD Sharma', 'Maths', '4th Edition', '20168059', 'mechprod', '3', 'A bit old.Good condition.No pencil marks.', 'ok', '200', 0),
-(2, 'IE Irodov', 'Physics', '3', 'Chutia', 'ece', '3', 'FUCKING NEW BIATCH!', 'new', '114', 1),
-(3, 'Paulo Coelho', 'The Alchemist', '4', '20168059', NULL, NULL, 'Great Novel', 'new', '350', 1),
-(9, 'SL Loney', 'Trigonometry', '4', '20168059', 'chem', '5', '1234', 'poor', '450', 0),
-(10, 'Dennis Ritchie', 'Let Us C', '2', '20168059', 'cseit', '3', 'MADARCHUDAI', 'new', '4000', 1),
-(12, 'Kayden Kross', 'Google Me', '3', '20168059', 'ece', '3', 'Fuck Arshad', 'good', '455', 0);
+(1, 'RD Sharma', 'Maths', '4th Edition', '20168059', 'ece', '3', 'A bit old.Good condition.No pencil marks.', 'ok', '200', 1),
+(2, 'IE Irodov', 'Physics', '3', 'vishal', 'ece', '3', 'book', 'new', '114', 1),
+(3, 'Paulo Coelho', 'The Alchemist', '4', '20168059', 'ece', '3', 'Great Novel', 'new', '350', 0),
+(9, 'SL Loney', 'Trigonometry', '4', '20168059', 'ece', '5', '1234', 'poor', '450', 0),
+(10, 'Dennis Ritchie', 'Let Us C', '2', '20168059', 'ece', '3', 'great book', 'new', '4000', 0),
+(12, 'R.C Verma', 'Google Me', '3', '20168059', 'ece', '3', 'okay', 'good', '455', 0);
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,7 @@ CREATE TABLE `misc` (
 --
 
 INSERT INTO `misc` (`id`, `name`, `quality`, `description`, `price`, `is_sold`) VALUES
-(1, 'Washing Machine', 'poor', 'machine of DOOM', '3050', 0);
+(1, 'Washing Machine', 'poor', 'machine of DOOM', '3050', 1);
 
 -- --------------------------------------------------------
 
@@ -167,9 +167,23 @@ INSERT INTO `salerequest` (`id`, `seller`, `category`, `author`, `title`, `editi
 (2, '20168043', 'bikes', NULL, '', NULL, NULL, NULL, 'Lamborghini Aventador', 'Red', 0, NULL, 'Real Fast', 'new', '1000', 0),
 (5, '20168059', 'books', 'SL Loney', 'Trigonometry', '4', 'chem', '5', NULL, NULL, NULL, NULL, '1234', 'poor', '450', 1),
 (6, '20168059', 'books', 'Coremen', 'Algorithms', '4', 'cseit', '4', NULL, NULL, NULL, NULL, 'It\'s a big book.Read it to become ALGO GOD.', 'new', '1000', 0),
-(30, '20168059', 'books', 'Sunny Leone', 'How I roll', '4', 'ece', '2', NULL, NULL, NULL, NULL, 'I\'m good', 'good', '350', 0),
-(31, '20168059', 'books', 'Dennis Ritchie', 'Let Us C', '2', 'cseit', '3', NULL, NULL, NULL, NULL, 'MADARCHUDAI', 'new', '4000', 1),
-(34, '20168059', 'books', 'Kayden Kross', 'Google Me', '3', 'ece', '3', NULL, NULL, 0, NULL, 'Fuck Arshad', 'good', '455', 1);
+(31, '20168059', 'books', 'Dennis Ritchie', 'Let Us C', '2', 'cseit', '3', NULL, NULL, NULL, NULL, 'excellent', 'new', '4000', 1),
+(34, '20168059', 'books', 'mark', 'Google Me', '3', 'ece', '3', NULL, NULL, 0, NULL, 'bezos', 'good', '455', 1),
+(35, '20168059', 'misc', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'jsndjsnjd', 'jdfbdfhbhbu', 'ok', '233', 0),
+(36, '20168059', 'books', 'jdhfjhdfj', 'hjfhdjfh', '237', 'cseit', '1', NULL, NULL, 0, NULL, 'djhfdh', 'new', '23', 0),
+(37, '20168059', 'books', '', '', '', 'cseit', '1', NULL, NULL, 0, NULL, 'hdgfhgdhf', 'new', '3434', 0),
+(38, '20168059', 'books', '', 'jenfjnejf', '374', 'cseit', '1', NULL, NULL, 0, NULL, 'hdbfheheh', 'new', '3764', 0),
+(39, '20168059', 'books', '', '', '', 'cseit', '1', NULL, NULL, 0, NULL, 'hdbfhdhg', 'new', '634', 0),
+(40, '20168059', 'books', '', '', '', 'cseit', '1', NULL, NULL, 0, NULL, 'jehehfuehfuehfu', 'new', '34', 0),
+(41, '20168059', 'books', '', '', '', 'cseit', '1', NULL, NULL, 0, NULL, 'sbdjdfdfhd', 'new', '374', 0),
+(42, '20168059', 'books', 'hgeyfgeyfge', '', '', 'cseit', '1', NULL, NULL, 0, NULL, 'bdfhhe', 'new', '3434', 0),
+(43, '20168059', 'books', '', '', '', 'cseit', '1', NULL, NULL, 0, NULL, 'hegfy', 'new', '3646', 0),
+(44, '20168059', 'books', '', '', '', 'cseit', '1', NULL, NULL, 0, NULL, 'jdhfhdfh', 'new', '3748', 0),
+(45, '20168059', 'books', 'heehfgeyf', '', '', 'cseit', '1', NULL, NULL, 0, NULL, 'jehfeh', 'new', '7634', 0),
+(46, '20168059', 'books', 'dfhhdf', 'hdjhjfh', '', 'cseit', '1', NULL, NULL, 0, NULL, 'dhbfhdgfhg', 'new', '37647', 0),
+(47, '20168059', 'books', 'kdhfjhjehf', 'wjiejiejijei', '12', 'cseit', '6', NULL, NULL, 0, NULL, 'jfjhdfehjfhejfhe', 'new', '7347', 0),
+(48, '20168059', 'bikes', NULL, NULL, NULL, NULL, NULL, 'djfhdjfhjd', 'red', 0, NULL, 'djfijeijij', 'new', '2873', 0),
+(49, '20168059', 'books', 'hdfjdgfhg', 'hfudhfu', '487', 'cseit', '1', NULL, NULL, 0, NULL, 'ghdfgdhgf', 'new', '34', 0);
 
 -- --------------------------------------------------------
 
@@ -194,7 +208,41 @@ INSERT INTO `sold_items` (`checkout_id`, `reg`, `item_id`, `item_category`, `is_
 (2, '20168059', 1, 'bikes', 0),
 (4, '20168059', 2, 'books', 0),
 (5, '20168059', 3, 'books', 1),
-(6, '20168059', 10, 'books', 1);
+(6, '20168059', 10, 'books', 1),
+(7, '20168059', 2, 'books', 0),
+(8, '20168059', 12, 'books', 0),
+(9, '20168059', 1, 'books', 0),
+(10, '20168059', 10, 'books', 0),
+(11, '20168059', 1, 'bikes', 0),
+(12, '20168059', 1, 'misc', 0),
+(13, '20168059', 10, 'books', 0),
+(14, '20168059', 2, 'books', 0),
+(15, '20168059', 12, 'books', 0),
+(16, '20168059', 1, 'books', 0),
+(17, '20168059', 9, 'books', 0),
+(18, '20168059', 10, 'books', 0),
+(19, '20168059', 2, 'books', 0),
+(20, '20168059', 12, 'books', 0),
+(21, '20168059', 1, 'books', 0),
+(22, '20168059', 1, 'bikes', 0),
+(23, '20168059', 1, 'misc', 0),
+(24, '20168059', 1, 'books', 0),
+(25, '20168059', 2, 'books', 0),
+(26, '20168059', 3, 'books', 0),
+(27, '20168059', 10, 'books', 0),
+(28, '20168059', 12, 'books', 0),
+(29, '20168059', 9, 'books', 0),
+(30, '20168059', 1, 'bikes', 0),
+(31, '20168059', 1, 'books', 0),
+(32, '20168059', 3, 'books', 0),
+(33, '20168059', 2, 'books', 0),
+(34, '20168059', 10, 'books', 0),
+(35, '20168059', 12, 'books', 0),
+(36, '20168059', 9, 'books', 0),
+(37, '20168059', 1, 'misc', 0),
+(38, '20168059', 1, 'misc', 0),
+(39, '20168059', 2, 'books', 0),
+(40, '20168059', 1, 'books', 0);
 
 -- --------------------------------------------------------
 
@@ -217,7 +265,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_reg`, `user_password`, `first_name`, `last_name`, `email`, `phone_number`, `address`) VALUES
-('20161234', 'yo', 'shion', 'sinha', 'shionsinha@gmail.com', 'wir2r339rj', '223 Patel Hostel'),
+('20168043', '1234', 'shion', 'sinha', 'shionsinha@gmail.com', 'wir2r339rj', '223 Patel Hostel'),
 ('20168059', 'nmistic', 'Siddhant', 'Sinha', 'siddhantsinha140@gmail.com', '7903265214', '223 Patel Hostel MNNIT Allahabad');
 
 --
@@ -293,7 +341,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `misc`
@@ -305,13 +353,13 @@ ALTER TABLE `misc`
 -- AUTO_INCREMENT for table `salerequest`
 --
 ALTER TABLE `salerequest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `sold_items`
 --
 ALTER TABLE `sold_items`
-  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `checkout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
